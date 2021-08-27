@@ -1,0 +1,20 @@
+{
+  "name": "node-sequelize-association",
+  "version": "1.0.0",
+  "description": "local to association tests",
+  "main": "server.js",
+  "keywords": [
+    "nodejs",
+    "sequelize",
+    "one-to-many",
+    "association"
+  ],
+  "repository": "https://github.com/titecnologias/node-sequelize-association",
+  "author": "wsfroes",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^2.3.0",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
+  }
+}
