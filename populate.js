@@ -1,8 +1,9 @@
-const controller = require("./app/controllers/tutorial.controller");
+const Tutorial = require("./app/controllers/TutorialController");
+const Comment = require("./app/controllers/CommentControler");
 
 //Create Tutorials
 module.exports = async () => {
-  const tut1 = await controller.createTutorial({
+  const tut1 = await Tutorial.createTutorial({
     title: "Tut#1",
     description: "Tut#1 Description",
   });
@@ -16,7 +17,7 @@ module.exports = async () => {
   }
   */
 
-  const tut2 = await controller.createTutorial({
+  const tut2 = await Tutorial.createTutorial({
     title: "Tut#2",
     description: "Tut#2 Description",
   });
@@ -32,7 +33,7 @@ module.exports = async () => {
 
   //Create Comments
 
-  const comment1 = await controller.createComment(tut1.id, {
+  const comment1 = await Comment.createComment(tut1.id, {
     name: "bezkoder",
     text: "Good job!",
   });
@@ -47,7 +48,7 @@ module.exports = async () => {
     }
     */
 
-    await controller.createComment(tut1.id, {
+    await Comment.createComment(tut1.id, {
       name: "zkoder",
       text: "One of the best tuts!",
     });
@@ -62,7 +63,7 @@ module.exports = async () => {
 }
 */
 
-const comment2 = await controller.createComment(tut2.id, {
+const comment2 = await Comment.createComment(tut2.id, {
       name: "aKoder",
       text: "Hi, thank you!",
     });
@@ -77,7 +78,7 @@ const comment2 = await controller.createComment(tut2.id, {
     }
     */
 
-    await controller.createComment(tut2.id, {
+    await Comment.createComment(tut2.id, {
       name: "anotherKoder",
       text: "Awesome tut!",
     });
@@ -93,7 +94,7 @@ const comment2 = await controller.createComment(tut2.id, {
 */
 //Get Tutorial by given id
 
-const tut1Data = await controller.findTutorialById(tut1.id);
+const tut1Data = await Tutorial.findTutorialById(tut1.id);
 console.log(
   ">> Tutorial id=" + tut1Data.id,
   JSON.stringify(tut1Data, null, 2)
@@ -126,7 +127,7 @@ console.log(
 }
 */
 
-const tut2Data = await controller.findTutorialById(tut2.id);
+const tut2Data = await Tutorial.findTutorialById(tut2.id);
 console.log(
   ">> Tutorial id=" + tut2Data.id,
   JSON.stringify(tut2Data, null, 2)
@@ -161,7 +162,7 @@ console.log(
 
 //Get Comment by given id
 
-const comment1Data = await controller.findCommentById(comment1.id);
+const comment1Data = await Comment.findCommentById(comment1.id);
 console.log(
   ">> Comment id=" + comment1.id,
   JSON.stringify(comment1Data, null, 2)
@@ -184,7 +185,7 @@ console.log(
 }
 */
 
-const comment2Data = await controller.findCommentById(comment2.id);
+const comment2Data = await Comment.findCommentById(comment2.id);
 console.log(
   ">> Comment id=" + comment2.id,
   JSON.stringify(comment2Data, null, 2)
@@ -209,7 +210,7 @@ console.log(
 
 //Get all Tutorials
 
-const tutorials = await controller.findAll();
+const tutorials = await Tutorial.findAll();
 console.log(">> All tutorials", JSON.stringify(tutorials, null, 2));
 /*
 >> All tutorials [
