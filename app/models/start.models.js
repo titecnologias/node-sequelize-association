@@ -1,5 +1,7 @@
 const models = require("../config/db");
 
+models.sequelize.createSchema('admin').then(() => {});
+
 //create ou init tables
 models.tutorials = require("./tutorial.model")(models.sequelize, models.Sequelize);
 models.comments = require("./comment.model")(models.sequelize, models.Sequelize);

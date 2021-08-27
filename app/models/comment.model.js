@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     }
   }, {
-    tableName: "comentarios",
     schema: "admin"
   });
 

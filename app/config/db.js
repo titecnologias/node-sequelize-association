@@ -19,6 +19,4 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.sequelize.createSchema('admin').then(() => {});
-
 module.exports = db;
